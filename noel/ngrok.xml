@@ -8,9 +8,9 @@
   <Description>
     [b]Ngrok[b]
   </Description>
-  <Registry>https://registry.hub.docker.com/r/wernight/ngrok</Registry>
+  <Registry>https://hub.docker.com/r/noelb888/ngrok</Registry>
   <GitHub>https://github.com/noel/unraidtemplates</GitHub>
-  <Repository>wernight/ngrok:latest</Repository>
+  <Repository>noelb888/ngrok:latest</Repository>
   <Privileged>false</Privileged>
   <Networking>
     <Mode>bridge</Mode>
