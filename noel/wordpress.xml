@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <Name>Pints</Name>
-  <Description>Raspberry Pints, beer tap display app[br]IMPORTANT :- YOU MUST CHANGE THE HOST PORT BELOW</Description>
-  <Registry>https://registry.hub.docker.com/u/sparklyballs/pints/</Registry>
-  <Repository>sparklyballs/pints</Repository>
+  <Name>Wordpress</Name>
+  <Description>Run Wordress on Unraid.  Great for Development Environment</Description>
+  <Registry>https://hub.docker.com/r/noelb888/wordpress</Registry>
+  <GitHub>https://github.com/noel/unraidtemplates</GitHub>
+  <Repository>noelb888/wordpress:latest</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
@@ -11,26 +12,38 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>81</HostPort>
+        <HostPort>84</HostPort>
         <ContainerPort>80</ContainerPort>
-        <Protocol>tcp</Protocol>
+        <Protocol>http</Protocol>
       </Port>
     </Publish>
   </Networking>
+   <Environment>
+    <Variable>
+      <Name>TRANS_DIR</Name>
+      <Value>/config/transcode</Value>
+    </Variable>
+    <Variable>
+      <Name>UMASK</Name>
+      <Value>000</Value>
+    </Variable>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+  </Environment>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/appdata/pints/www</HostDir>
-      <ContainerDir>/var/www/Pints</ContainerDir>
+      <HostDir>/mnt/user/persistent-volume/wordpressdev</HostDir>
+      <ContainerDir>/bitnami</ContainerDir>
       <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/cache/appdata/pints/config</HostDir>
-      <ContainerDir>/config</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
+    </Volume>  
   </Data>
-  <Version>05616fd2</Version>
-  <WebUI>http://[iP]:[PORT:80]/</WebUI>
+   <WebUI>http://[iP]:[PORT:84]/</WebUI>
   <Banner>http://whatsmybeeragain.com/wp-content/uploads/2013/12/Whats-My-Beer-Logo-Banner-2-01-e1318366883801.png</Banner>
   <Icon>http://fullersbarbeerfest.co.uk/files/6113/8705/6693/light-beer.png</Icon>
   <ExtraParams></ExtraParams>
