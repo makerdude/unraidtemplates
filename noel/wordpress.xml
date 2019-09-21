@@ -20,8 +20,8 @@
   </Networking>
    <Environment>
     <Variable>
-      <Name>TRANS_DIR</Name>
-      <Value>/config/transcode</Value>
+      <Name>MARIADB_ROOT_PASSWORD</Name>
+      <Value></Value>
     </Variable>
     <Variable>
       <Name>UMASK</Name>
