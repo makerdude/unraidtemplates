@@ -4,7 +4,7 @@
   <Description>Run Wordress on Unraid.  Great for Development Environment</Description>
   <Registry>https://hub.docker.com/r/noelb888/unraid-docker-wordpress</Registry>
   <GitHub>https://github.com/noel/unraidtemplates</GitHub>
-  <Repository>noelb888/wordpress:latest</Repository>
+  <Repository>noelb888/unraid-docker-wordpress:latest</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
